@@ -36,15 +36,15 @@ public class SeekBrickState : State
         Vector3 closestBrickPos = botController.transform.position;
         float distanceToClosestBrick = 100000f;
 
-        for (int i = 0; i < botController.brickGenerator.spawnedBricks.Length; i++)
+        for (int i = 0; i < botController.bricks.Count; i++)
         {
-            if (botController.characterColor == botController.brickGenerator.spawnedBricks[i].brickColorName)
+            if (botController.characterColor == botController.bricks[i].brickColor)
             {
-                float distanceToBrick = Vector3.Distance(botController.transform.position, botController.brickGenerator.spawnedBricks[i].position);
+                float distanceToBrick = Vector3.Distance(botController.transform.position, botController.bricks[i].transform.position);
                 if (distanceToBrick < distanceToClosestBrick)
                 {
                     distanceToClosestBrick = distanceToBrick;
-                    closestBrickPos = botController.brickGenerator.spawnedBricks[i].position;
+                    closestBrickPos = botController.bricks[i].transform.position;
 
                     Debug.Log(closestBrickPos);
                 }
@@ -55,13 +55,13 @@ public class SeekBrickState : State
 
     public void MoveToBrickClosest(BotController botController)
     {
-        Debug.Log("di chuyen");
+        CreateListBrickClosest(botController);
         botController.navMeshAgent.SetDestination(GetPosBrickClosest(botController));
     }
 
     public void CreateListBrickClosest(BotController botController)
     {
-        botController.listBrickCharater.Clear();
+        botController.bricks.Clear();
         botController.brickGeneratorObject = GameObject.Find("BrickGenerator");
         if (botController.brickGeneratorObject != null)
         {
@@ -69,7 +69,7 @@ public class SeekBrickState : State
             {
                 Brick brick = botController.brickGeneratorObject.transform.GetChild(i).GetComponent<Brick>();
 
-                botController.listBrickCharater.Add(brick.transform);
+                botController.bricks.Add(brick);
             }
         }
     }

@@ -12,7 +12,7 @@ public class BotController : CharacterController
     public Transform botRenderer;
 
     public LayerMask groundLayer;
-    
+    public List<Brick> bricks = new List<Brick>();
     public BuildBrickState BuildBrickState = new BuildBrickState();
     public SeekBrickState SeekBrickState = new SeekBrickState();
 

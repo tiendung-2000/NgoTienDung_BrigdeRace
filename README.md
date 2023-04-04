@@ -1,5 +1,4 @@
-<a href="//imgur.com/a/Di6lAkD"><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-//<img src="https://imgur.com/t/pixelart/Di6lAkD" style="width: 100%">
+<source type="video/mp4" src="https://i.imgur.com/j2A3N2E.mp4">
 
 # Dynoisme [![Contact:](https://www.facebook.com/isnotdino)]
 

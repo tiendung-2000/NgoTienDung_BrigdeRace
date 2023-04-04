@@ -34,7 +34,7 @@ public class SeekBrickState : State
     public Vector3 GetPosBrickClosest(BotController botController)
     {
         Vector3 closestBrickPos = botController.transform.position;
-        float distanceToClosestBrick = Mathf.Infinity;
+        float distanceToClosestBrick = 100000f;
 
         for (int i = 0; i < botController.brickGenerator.spawnedBricks.Length; i++)
         {

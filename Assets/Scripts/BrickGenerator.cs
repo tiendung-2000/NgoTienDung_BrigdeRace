@@ -90,8 +90,8 @@ public class BrickGenerator : MonoBehaviour
             if (spawnedBricks[i].removed == true)
             {
                 int temp = (int)spawnedBricks[i].brickColorName;
-                Debug.Log(i);
-                Debug.Log(spawnedBricks[i].position);
+                //Debug.Log(i);
+                //Debug.Log(spawnedBricks[i].position);
                 Transform createdBrick = Instantiate(brickPrefabs[temp], spawnedBricks[i].position, Quaternion.identity).transform;
                 createdBrick.GetComponent<Brick>().numberBrick = i;
                 spawnedBricks[i].removed = false;

@@ -24,12 +24,12 @@ public class BotController : CharacterController
             ChangeState(new SeekBrickState());
 
 
-            Rand = UnityEngine.Random.Range(0, 10);
+            Rand = UnityEngine.Random.Range(0, 3);
             for (int j = 0; j < 100; j++)
             {
                 if (temp.Contains(Rand))
                 {
-                    Rand = UnityEngine.Random.Range(0, 10);
+                    Rand = UnityEngine.Random.Range(0, 3);
                 }
                 else break;
 
@@ -49,6 +49,7 @@ public class BotController : CharacterController
 
     private void Update()
     {
+        // goi ham xu ly
         if (currentState != null)
         {
             currentState.OnExecute(this);

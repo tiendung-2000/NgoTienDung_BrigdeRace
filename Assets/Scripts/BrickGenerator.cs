@@ -30,7 +30,7 @@ public class BrickGenerator : MonoBehaviour
     {
         OnInit();
 
-        InvokeRepeating(nameof(GenerateRemovedBrick), 1f, 3f);
+        InvokeRepeating(nameof(GenerateRemovedBrick), 1f, 1f);
     }
 
     void OnInit()
@@ -64,6 +64,7 @@ public class BrickGenerator : MonoBehaviour
 
             createBrick.transform.SetParent(this.transform);
             createBrick.GetComponent<Brick>().numberBrick = i;
+            //Debug.Log(createBrick.transform.position);
             InsertIntoArray(createBrick, createBrick.GetComponent<Brick>().brickColor, i);
         }
     }

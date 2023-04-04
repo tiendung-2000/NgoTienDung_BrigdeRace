@@ -58,7 +58,30 @@ public class BotController : CharacterController
     }
     protected override void CharacterMoving()
     {
-
+        Stair stair = CheckLayerStair();
+        if (stair == null)
+        {
+            //joystickMove.JoystickMoving();
+        }
+        else
+        {
+            if (stair.colorType == characterColor)
+            {
+                //joystickMove.JoystickMoving();
+            }
+            else
+            {
+                if (listBrickCharater.Count > 0)
+                {
+                    stair.ChangeColor(characterColor);
+                    RemoveBrick();
+                }
+                else
+                {
+                    ChangeState(SeekBrickState);
+                }
+            }
+        }
     }
 
     public override void RandomCharacterColor(Transform botRenderer, ColorType colorType)
@@ -76,7 +99,7 @@ public class BotController : CharacterController
         Debug.Log(currentState);
         //if (currentState != null)
         //{
-            currentState.OnStart(this);
+        currentState.OnStart(this);
         //}
     }
 }

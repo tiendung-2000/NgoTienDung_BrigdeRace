@@ -8,13 +8,13 @@ public class NewStage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player")/* || other.gameObject.CompareTag("bot")*/)
+        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("bot"))
         {   
             other.GetComponent<CharacterController>().brickGenerator = this.brickGenerator;
 
             brickGenerator.gameObject.SetActive(true);
             //this.gameObject.SetActive(false);
-            brickGenerator.ShuffleBrick();
+            //brickGenerator.ShuffleBrick();
         }
     }
 

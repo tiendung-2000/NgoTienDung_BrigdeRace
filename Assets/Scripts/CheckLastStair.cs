@@ -7,17 +7,17 @@ public class CheckLastStair : MonoBehaviour
     [SerializeField] GameObject door;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("bot"))
         {
+            Debug.Log("trigger");
             door.SetActive(false);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("bot"))
         {
-
             StartCoroutine(ICloseDoor());
         }
     }

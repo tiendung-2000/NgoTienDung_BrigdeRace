@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/orGle0y_d.webp" style="width: 50%, height:50% ,display: flex, align-items: center">
+<img src="https://i.imgur.com/orGle0y_d.webp" style="width: 50%, height:50% , align-items: center">
 
 # Dynoisme <a href="https://www.facebook.com/isnotdino">Contact</a>
 

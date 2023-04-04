@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 43306486}
   - component: {fileID: 43306485}
   m_Layer: 6
-  m_Name: Ground1
+  m_Name: Ground2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1794,11 +1794,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 72ad60e7aa53d734ea02d93e6b4f99c8, type: 2}
   characterColor: 3
   brickGenerator: {fileID: 96656013}
+  brickGeneratorObject: {fileID: 0}
   layerStair:
     serializedVersion: 2
     m_Bits: 8
   PosRaycast: {fileID: 1898674967}
   Rand: 0
+  currentPlatform: 0
   joystickMove: {fileID: 1485439372}
   playerRenderer: {fileID: 1025520041}
 --- !u!114 &1485439372
@@ -1991,7 +1993,7 @@ GameObject:
   - component: {fileID: 1609000052}
   - component: {fileID: 1609000051}
   m_Layer: 6
-  m_Name: Ground1
+  m_Name: Ground4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2220,6 +2222,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4468869484997535737, guid: 02e015b6a1f7b034e83ae63f43ba0a81, type: 3}
+      propertyPath: Rand
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468869484997535737, guid: 02e015b6a1f7b034e83ae63f43ba0a81, type: 3}
+      propertyPath: brickGenerator
+      value: 
+      objectReference: {fileID: 96656013}
+    - target: {fileID: 4468869484997535737, guid: 02e015b6a1f7b034e83ae63f43ba0a81, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468869484997535737, guid: 02e015b6a1f7b034e83ae63f43ba0a81, type: 3}
+      propertyPath: brickGeneratorObject
+      value: 
+      objectReference: {fileID: 96656012}
     - target: {fileID: 4468869484997535738, guid: 02e015b6a1f7b034e83ae63f43ba0a81, type: 3}
       propertyPath: m_Name
       value: Bot
@@ -2481,7 +2499,7 @@ GameObject:
   - component: {fileID: 2062852986}
   - component: {fileID: 2062852985}
   m_Layer: 6
-  m_Name: Ground1
+  m_Name: Ground3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

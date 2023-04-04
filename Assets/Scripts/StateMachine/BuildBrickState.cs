@@ -24,6 +24,8 @@ public class BuildBrickState : State
 
     private void MoveToNextPlatform(BotController botController)
     {
+        Debug.Log("Build");
+
         int nextPlatform = botController.currentPlatform;
 
         RaycastHit nextPlatformLevel;

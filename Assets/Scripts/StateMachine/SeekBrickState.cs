@@ -12,18 +12,9 @@ public class SeekBrickState : State
 
     public override void OnUpdate(BotController botController)
     {
-        //botController.SetDestionation(GetPosBrickClosest(botController));
-
-        //if (botController.IsDestination)
-        //{ 
-        //    if(botController.listBrickCharater.Count == targetBrick)
-        //    {
-        //       //build Brick
-        //    }
-        //}
         if (botController.navMeshAgent.remainingDistance < 0.1f)
         {
-            if (botController.listBrickCharater.Count >= 10)
+            if (botController.listBrickCharater.Count >= 3)
             {
                 botController.ChangeState(botController.BuildBrickState);
             }
@@ -36,26 +27,35 @@ public class SeekBrickState : State
 
     public override void OnExit(BotController botController)
     {
-       
+
     }
 
-
-   Vector3 vt3;
+    //Vector3 vt3;
     public Vector3 GetPosBrickClosest(BotController botController)
-    {  
-        for(int i = 0; i< botController.brickGenerator.spawnedBricks.Length ; i++)
+    {
+        Vector3 closestBrickPos = botController.transform.position;
+        float distanceToClosestBrick = Mathf.Infinity;
+
+        for (int i = 0; i < botController.brickGenerator.spawnedBricks.Length; i++)
         {
             if (botController.characterColor == botController.brickGenerator.spawnedBricks[i].brickColorName)
             {
-                vt3 = botController.brickGenerator.spawnedBricks[i].position;
+                float distanceToBrick = Vector3.Distance(botController.transform.position, botController.brickGenerator.spawnedBricks[i].position);
+                if (distanceToBrick < distanceToClosestBrick)
+                {
+                    distanceToClosestBrick = distanceToBrick;
+                    closestBrickPos = botController.brickGenerator.spawnedBricks[i].position;
+
+                    Debug.Log(closestBrickPos);
+                }
             }
         }
-        return vt3;
+        return closestBrickPos;
     }
 
     public void MoveToBrickClosest(BotController botController)
     {
-
+        Debug.Log("di chuyen");
         botController.navMeshAgent.SetDestination(GetPosBrickClosest(botController));
     }
 
@@ -63,9 +63,9 @@ public class SeekBrickState : State
     {
         botController.listBrickCharater.Clear();
         botController.brickGeneratorObject = GameObject.Find("BrickGenerator");
-        if(botController.brickGeneratorObject!= null )
+        if (botController.brickGeneratorObject != null)
         {
-            for(int i = 0; i < botController.brickGeneratorObject.transform.childCount -1; i++)
+            for (int i = 0; i < botController.brickGeneratorObject.transform.childCount - 1; i++)
             {
                 Brick brick = botController.brickGeneratorObject.transform.GetChild(i).GetComponent<Brick>();
 

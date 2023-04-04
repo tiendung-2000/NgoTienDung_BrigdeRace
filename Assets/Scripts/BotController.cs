@@ -25,7 +25,7 @@ public class BotController : CharacterController
     {
         //ChangeState(new SeekBrickState());
         currentState = SeekBrickState;
-
+        Debug.Log(currentState);
         Rand = UnityEngine.Random.Range(0, 3);
         for (int j = 0; j < 100; j++)
         {
@@ -47,7 +47,7 @@ public class BotController : CharacterController
         des = point;
     }
 
-    public bool IsDestination => Vector3.Distance(transform.position, des) < 0.1f;
+    //public bool IsDestination => Vector3.Distance(transform.position, des) < 0.1f;
 
     private void Update()
     {
@@ -67,16 +67,16 @@ public class BotController : CharacterController
     }
     public void ChangeState(State newState)
     {
-        if (currentState != null)
-        {
-            currentState.OnExit(this);
-        }
-
+        //if (currentState != null)
+        //{
+        //    currentState.OnExit(this);
+        //}
+        Debug.Log("doi state");
         currentState = newState;
-
-        if (currentState != null)
-        {
+        Debug.Log(currentState);
+        //if (currentState != null)
+        //{
             currentState.OnStart(this);
-        }
+        //}
     }
 }

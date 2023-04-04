@@ -71,7 +71,7 @@ public class BrickGenerator : MonoBehaviour
 
     public void MakeRemoved(int brickNumber)
     {
-        Debug.Log(brickNumber);
+        //Debug.Log(brickNumber);
         spawnedBricks[brickNumber].removed = true;
     }
     private void InsertIntoArray(Transform createdBrick, ColorType colorName, int i)

@@ -30,7 +30,7 @@ public class BrickGenerator : MonoBehaviour
     {
         OnInit();
 
-        InvokeRepeating(nameof(GenerateRemovedBrick), 1f, 1f);
+        InvokeRepeating(nameof(GenerateRemovedBrick), 5f, 5f);
     }
 
     void OnInit()

@@ -8,20 +8,15 @@ public class CharacterController : MonoBehaviour
 
     public List<Transform> listBrickCharater = new List<Transform>();
 
-    // public Transform CharacterRenderer;
-
     public Material[] characterMat;
-
 
     public ColorType characterColor;
 
-
     public BrickGenerator brickGenerator;
 
-
+    public GameObject brickGeneratorObject;
 
     public LayerMask layerStair;
-
 
     public Transform PosRaycast;
 
@@ -29,6 +24,7 @@ public class CharacterController : MonoBehaviour
 
     public int Rand;
 
+    public int currentPlatform;
 
     private void Start()
     {
@@ -38,10 +34,8 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         CharacterMoving();
     }
-
 
     protected virtual void CharacterMoving()
     {

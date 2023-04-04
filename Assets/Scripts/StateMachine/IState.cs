@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IState
+public abstract class State
 {
-    void OnEnter(BotController botController);
+    public abstract void OnStart(BotController botController);
 
-    void OnExecute(BotController botController);
+    public abstract void OnUpdate(BotController botController);
 
-    void OnExit(BotController botController);
+    public abstract void OnExit(BotController botController);
 }

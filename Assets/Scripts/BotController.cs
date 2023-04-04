@@ -6,36 +6,38 @@ using UnityEngine.AI;
 
 public class BotController : CharacterController
 {
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
 
-    IState currentState;
+    public State currentState;
     public Transform botRenderer;
+
+    public LayerMask groundLayer;
+    
+    public BuildBrickState BuildBrickState = new BuildBrickState();
+    public SeekBrickState SeekBrickState = new SeekBrickState();
 
     private void Awake()
     {
-
         navMeshAgent = GetComponent<NavMeshAgent>();
-
-       // botRenderer.Add( FindObjectOfType<BotController>().transform );
     }
 
     private void Start()
     {
-            ChangeState(new SeekBrickState());
+        //ChangeState(new SeekBrickState());
+        currentState = SeekBrickState;
 
-
-            Rand = UnityEngine.Random.Range(0, 3);
-            for (int j = 0; j < 100; j++)
+        Rand = UnityEngine.Random.Range(0, 3);
+        for (int j = 0; j < 100; j++)
+        {
+            if (temp.Contains(Rand))
             {
-                if (temp.Contains(Rand))
-                {
-                    Rand = UnityEngine.Random.Range(0, 3);
-                }
-                else break;
+                Rand = UnityEngine.Random.Range(0, 3);
+            }
+            else break;
 
-            }  
-            RandomCharacterColor(botRenderer, (ColorType)Rand);
-            temp.Add(Rand);
+        }
+        RandomCharacterColor(botRenderer, (ColorType)Rand);
+        temp.Add(Rand);
     }
 
     Vector3 des;
@@ -49,10 +51,9 @@ public class BotController : CharacterController
 
     private void Update()
     {
-        // goi ham xu ly
         if (currentState != null)
         {
-            currentState.OnExecute(this);
+            currentState.OnUpdate(this);
         }
     }
     protected override void CharacterMoving()
@@ -64,7 +65,7 @@ public class BotController : CharacterController
     {
         base.RandomCharacterColor(botRenderer, colorType);
     }
-    public void ChangeState(IState newState)
+    public void ChangeState(State newState)
     {
         if (currentState != null)
         {
@@ -75,7 +76,7 @@ public class BotController : CharacterController
 
         if (currentState != null)
         {
-            currentState.OnEnter(this);
+            currentState.OnStart(this);
         }
     }
 }

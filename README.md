@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/orGle0y_d.webp" style="width: 50%, height:50%">
 
-# Dynoisme [![Contact:](https://www.facebook.com/isnotdino)]
+# Dynoisme <a href="https://www.facebook.com/isnotdino"">[![Contact:]</a>
 
 ## Getting Started
 

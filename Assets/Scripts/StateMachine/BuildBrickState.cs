@@ -26,7 +26,7 @@ public class BuildBrickState : State
     {
         Debug.Log("Build");
 
-        int nextPlatform = botController.currentPlatform;
+        int nextPlatform = botController.currentPlatform + 1;
 
         RaycastHit nextPlatformLevel;
         Vector3 targetPos = botController.transform.position;
@@ -37,6 +37,7 @@ public class BuildBrickState : State
                 if (nextPlatformLevel.transform.name == "Ground" + nextPlatform.ToString())
                 {
                     targetPos = nextPlatformLevel.point;
+                    //Debug.Log(targetPos);
                     break;
                 }
             }

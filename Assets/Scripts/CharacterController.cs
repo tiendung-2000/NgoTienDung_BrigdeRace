@@ -45,37 +45,7 @@ public class CharacterController : MonoBehaviour
 
     protected virtual void CharacterMoving()
     {
-        //Stair stair = CheckLayerStair();
-        //// khong co stair
-        //if (stair == null )
-        //{
-        //    joystickMove.JoystickMoving();
-        //}
-        //// co stair
-        //else
-        //{
-        //    // cung mau
-        //    if (stair.colorType == characterColor )
-        //    {
-        //        joystickMove.JoystickMoving();
-        //    }
-        //    // khong cung mau
-        //    else
-        //    {
-        //        // con gach
-        //        if (listBrickCharater.Count > 0)
-        //        {
-        //            stair.ChangeColor(characterColor);
-        //            RemoveBrick();
-        //        }
-        //        // het gach
-        //        else
-
-        //        {
-        //            joystickMove.StopMoving();
-        //        }
-        //    }
-        //}
+        
     }
 
 
@@ -85,7 +55,6 @@ public class CharacterController : MonoBehaviour
         CharacterRenderer.GetComponent<MeshRenderer>().material = characterMat[(int)colorType];
     }
 
-    // so luong gach
     int QuantityBrick = 0;
     protected virtual void AddBrick(Collider other)
     {

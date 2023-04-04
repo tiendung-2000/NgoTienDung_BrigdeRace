@@ -1,4 +1,4 @@
-<source type="video/mp4" src="https://i.imgur.com/j2A3N2E.mp4">
+<img src="https://i.imgur.com/j2A3N2E.mp4" style="width: 100%">
 
 # Dynoisme [![Contact:](https://www.facebook.com/isnotdino)]
 

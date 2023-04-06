@@ -26,6 +26,8 @@ public class CharacterController : MonoBehaviour
 
     public int currentPlatform;
 
+    public List<Brick> bricks = new List<Brick>();
+
     private void Start()
     {
 
@@ -69,9 +71,9 @@ public class CharacterController : MonoBehaviour
             QuantityBrick--;
             Transform lastChild = listBrickCharater[listBrickCharater.Count - 1];
             listBrickCharater.Remove(lastChild.transform);
-
+            
             Destroy(lastChild.gameObject);
-            brickGenerator.GenerateRemovedBrick();
+            //brickGenerator.GenerateRemovedBrick();
 
         }
     }

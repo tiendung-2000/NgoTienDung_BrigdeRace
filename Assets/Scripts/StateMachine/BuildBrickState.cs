@@ -24,7 +24,7 @@ public class BuildBrickState : State
 
     private void MoveToNextPlatform(BotController botController)
     {
-        Debug.Log("Build");
+        //Debug.Log("Build");
 
         int nextPlatform = botController.currentPlatform + 1;
 
@@ -42,6 +42,7 @@ public class BuildBrickState : State
                 }
             }
         }
+        //Debug.Log("Move to next stage");
         botController.navMeshAgent.SetDestination(targetPos);
     }
 }

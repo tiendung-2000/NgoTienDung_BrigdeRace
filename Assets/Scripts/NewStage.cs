@@ -13,7 +13,8 @@ public class NewStage : MonoBehaviour
             other.GetComponent<CharacterController>().brickGenerator = this.brickGenerator;
 
             brickGenerator.gameObject.SetActive(true);
-            //this.gameObject.SetActive(false);
+            
+            this.gameObject.SetActive(false);
             //brickGenerator.ShuffleBrick();
         }
     }

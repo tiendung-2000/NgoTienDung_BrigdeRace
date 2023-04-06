@@ -19,7 +19,7 @@ public class BrickGenerator : MonoBehaviour
 
     private int length = 36;
     private int line = 6;
-    private int xOrder = 0;
+    private int xOrder = 15;
 
     private float zPosition;
     private float xPosition;
@@ -30,7 +30,7 @@ public class BrickGenerator : MonoBehaviour
     {
         OnInit();
 
-        InvokeRepeating(nameof(GenerateRemovedBrick), 5f, 5f);
+        InvokeRepeating(nameof(GenerateRemovedBrick), 5f, 1f);
     }
 
     void OnInit()

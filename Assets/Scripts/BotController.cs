@@ -12,7 +12,7 @@ public class BotController : CharacterController
     public Transform botRenderer;
 
     public LayerMask groundLayer;
-    public List<Brick> bricks = new List<Brick>();
+    
     public BuildBrickState BuildBrickState = new BuildBrickState();
     public SeekBrickState SeekBrickState = new SeekBrickState();
 
@@ -51,6 +51,8 @@ public class BotController : CharacterController
 
     private void Update()
     {
+        //Debug.Log(currentState);
+
         if (currentState != null)
         {
             currentState.OnUpdate(this);
@@ -94,9 +96,9 @@ public class BotController : CharacterController
         //{
         //    currentState.OnExit(this);
         //}
-        Debug.Log("doi state");
+        //Debug.Log("doi state");
         currentState = newState;
-        Debug.Log(currentState);
+        //Debug.Log(currentState);
         //if (currentState != null)
         //{
         currentState.OnStart(this);
